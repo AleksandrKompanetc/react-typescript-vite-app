@@ -9,7 +9,7 @@ interface Post {
 
 const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
-  const [loading, setLoading] = useState<boolean>(true)
+  const [loading, setLoading] = useState<boolean>(false)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
@@ -21,6 +21,9 @@ const App: React.FC = () => {
   return (
     <div className='container'>
       <h1>Posts</h1>
+      {loading ? (
+        <p>Loading...</p>
+      ) : (
       <div className='posts-wrapper'>
         {posts.map(post => (
           <div key={post.id} className='post-card'>
@@ -29,6 +32,7 @@ const App: React.FC = () => {
           </div>
         ))}
       </div>
+      )}
     </div>
   )
 }
