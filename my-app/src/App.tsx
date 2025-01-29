@@ -32,6 +32,10 @@ const App: React.FC = () => {
     fetchPosts()
   }, []);
 
+  const handleAddPost = () => {
+    
+  }
+
   const filteredPosts = posts.filter(post => 
     post.title.toLowerCase().includes(search.toLowerCase())
   )
@@ -63,7 +67,7 @@ const App: React.FC = () => {
           onChange={(e) => setNewBody(e.target.value)}
           className='add-post-text'
         />
-        <button className='add-button'>Add</button>
+        <button onClick={handleAddPost} className='add-button'>Add</button>
       </div>
       {loading ? (
         <p>Loading...</p>
