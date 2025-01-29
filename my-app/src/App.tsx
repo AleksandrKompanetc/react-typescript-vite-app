@@ -2,11 +2,11 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <div className=''>
-      Vite App
+    <div className='container'>
+      <h1>Posts</h1>
+      <div className='posts-wrapper'></div>
     </div>
   )
 }
