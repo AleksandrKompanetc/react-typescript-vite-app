@@ -9,18 +9,30 @@ interface Post {
 
 const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
-  const [loading, setLoading] = useState<boolean>(false)
+  const [loading, setLoading] = useState<boolean>(true)
 
-  useEffect(() => {
+  const fetchPosts = () => {
+    setLoading(true)
     fetch('https://jsonplaceholder.typicode.com/posts')
     .then(response => response.json())
-    .then(data => setPosts(data))
-    .catch(error => console.log('Error fetching posts:', error))
+    .then(data => {
+      setPosts(data)
+      setLoading(false)
+    })
+    .catch(error => {
+      console.error('Error fetching posts:', error)
+      setLoading(false)
+    })
+  }
+
+  useEffect(() => {
+    fetchPosts()
   }, []);
 
   return (
     <div className='container'>
       <h1>Posts</h1>
+      
       {loading ? (
         <p>Loading...</p>
       ) : (
