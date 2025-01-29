@@ -11,6 +11,7 @@ const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState<boolean>(true)
   const [search, setSearch] = useState<string>('')
+  const [newTitle, setNewTitle] = useState<string>('')
 
   const fetchPosts = () => {
     setLoading(true)
@@ -49,7 +50,7 @@ const App: React.FC = () => {
         <p>Loading...</p>
       ) : (
       <div className='posts-wrapper'>
-        {posts.map(post => (
+        {filteredPosts.map(post => (
           <div key={post.id} className='post-card'>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
