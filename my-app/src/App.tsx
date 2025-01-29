@@ -10,6 +10,7 @@ interface Post {
 const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState<boolean>(true)
+  const [search, setSearch] = useState<string>('')
 
   const fetchPosts = () => {
     setLoading(true)
