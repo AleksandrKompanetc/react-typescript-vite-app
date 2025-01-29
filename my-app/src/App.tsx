@@ -30,6 +30,10 @@ const App: React.FC = () => {
     fetchPosts()
   }, []);
 
+  const filteredPosts = posts.filter(post => 
+    post.title.toLowerCase().includes(search.toLowerCase())
+  )
+
   return (
     <div className='container'>
       <h1>Posts</h1>
