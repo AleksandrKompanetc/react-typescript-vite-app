@@ -12,6 +12,7 @@ const App: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(true)
   const [search, setSearch] = useState<string>('')
   const [newTitle, setNewTitle] = useState<string>('')
+  const [newBody, setNewBody] = useState<string>('')
 
   const fetchPosts = () => {
     setLoading(true)
