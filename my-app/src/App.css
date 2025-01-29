@@ -50,7 +50,7 @@
 
 h1 {
   text-align: center;
-  color: #333;
+  color: #807e7e;
 }
 
 .posts-wrapper {
@@ -66,4 +66,17 @@ h1 {
   border-radius: 8px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
+}
+
+.post-card:hover {
+  transform: scale(1.03)
+}
+
+.post-card h3 {
+  margin: 0 0 10px;
+  color: #777171;
+}
+
+.post-card p {
+  color: #f7f2f2;
 }
