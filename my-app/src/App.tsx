@@ -57,6 +57,13 @@ const App: React.FC = () => {
           onChange={(e) => setNewTitle(e.target.value)}
           className='add-post-input'
         />
+        <textarea 
+          placeholder='Post Text'
+          value={newBody}
+          onChange={(e) => setNewBody(e.target.value)}
+          className='add-post-text'
+        />
+        <button className='add-button'>Add</button>
       </div>
       {loading ? (
         <p>Loading...</p>
