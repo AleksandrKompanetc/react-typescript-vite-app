@@ -9,6 +9,7 @@ interface Post {
 
 const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
+  const [loading, setLoading] = useState<boolean>(true)
 
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/posts')
