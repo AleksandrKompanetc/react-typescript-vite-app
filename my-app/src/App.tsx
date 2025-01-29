@@ -47,6 +47,17 @@ const App: React.FC = () => {
         className='search-input'
       />
       <button onClick={fetchPosts} className='reload-button'>Reload</button>
+
+      <div className='add-post-form'>
+        <h2>Add Post</h2>
+        <input 
+          type="text" 
+          placeholder='Title'
+          value={newTitle}
+          onChange={(e) => setNewTitle(e.target.value)}
+          className='add-post-input'
+        />
+      </div>
       {loading ? (
         <p>Loading...</p>
       ) : (
