@@ -32,7 +32,7 @@ const App: React.FC = () => {
   return (
     <div className='container'>
       <h1>Posts</h1>
-      
+      <button onClick={fetchPosts} className='reload-button'>Reload</button>
       {loading ? (
         <p>Loading...</p>
       ) : (
