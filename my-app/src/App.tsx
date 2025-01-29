@@ -1,7 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 
-function App() {
+interface Post {
+  id: number;
+  title: string;
+  body: string;
+}
+
+const App: React.FC = () => {
 
   return (
     <div className='container'>
