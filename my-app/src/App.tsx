@@ -33,7 +33,16 @@ const App: React.FC = () => {
   }, []);
 
   const handleAddPost = () => {
-    
+    if (newTitle.trim() && newBody.trim()) {
+      const newPost:Post = {
+        id: posts.length + 1,
+        title: newTitle,
+        body: newBody,
+      };
+      setPosts([newPost, ...posts]);
+      setNewTitle('');
+      setNewBody('');
+    }
   }
 
   const filteredPosts = posts.filter(post => 
