@@ -45,6 +45,10 @@ const App: React.FC = () => {
     }
   }
 
+  const handleDeletePost = () => {
+    
+  }
+
   const filteredPosts = posts.filter(post => 
     post.title.toLowerCase().includes(search.toLowerCase())
   )
