@@ -86,6 +86,7 @@ const App: React.FC = () => {
           <div key={post.id} className='post-card'>
             <h3>{post.title}</h3>
             <p>{post.body}</p>
+            <button onClick={handleDeletePost(post.id)} className='delete-button'>Delete</button>
           </div>
         ))}
       </div>
