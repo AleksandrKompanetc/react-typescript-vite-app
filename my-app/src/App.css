@@ -96,3 +96,27 @@ h1 {
   background-color: transparent;
   text-align: center;
 }
+
+.input {
+  display: block;
+  max-width: 20%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background-color: transparent;
+  text-align: center;
+}
+
+.textarea {
+  display: block;
+  max-width: 20%;
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #fff;
+  background-color: transparent;
+  text-align: center;
+}
