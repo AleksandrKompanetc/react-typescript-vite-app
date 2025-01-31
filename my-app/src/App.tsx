@@ -45,8 +45,8 @@ const App: React.FC = () => {
     }
   }
 
-  const handleDeletePost = () => {
-    
+  const handleDeletePost = (id: number) => {
+    setPosts(posts.filter(post => post.id !== id))
   }
 
   const filteredPosts = posts.filter(post => 
