@@ -18,15 +18,15 @@ const App: React.FC = () => {
   const fetchPosts = () => {
     setLoading(true)
     fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(response => response.json())
-    .then(data => {
-      setPosts(data.slice(0, 9))
-      setLoading(false)
-    })
-    .catch(error => {
-      console.error('Error fetching posts:', error)
-      setLoading(false)
-    })
+      .then(response => response.json())
+      .then(data => {
+        setPosts(data.slice(0, 9))
+        setLoading(false)
+      })
+      .catch(error => {
+        console.error('Error fetching posts:', error)
+        setLoading(false)
+      })
   }
 
   useEffect(() => {
@@ -35,7 +35,7 @@ const App: React.FC = () => {
 
   const handleAddPost = () => {
     if (newTitle.trim() && newBody.trim()) {
-      const newPost:Post = {
+      const newPost: Post = {
         id: posts.length + 1,
         title: newTitle,
         body: newBody,
@@ -46,19 +46,19 @@ const App: React.FC = () => {
     }
   }
 
-  const handleDeletePost = (id: number) =>{
+  const handleDeletePost = (id: number) => {
     setPosts(posts.filter(post => post.id !== id))
   }
 
-  const filteredPosts = posts.filter(post => 
+  const filteredPosts = posts.filter(post =>
     post.title.toLowerCase().includes(search.toLowerCase())
   )
 
   return (
     <div className='container'>
       <h1>Posts</h1>
-      <input 
-        type="text" 
+      <input
+        type="text"
         placeholder='Searching posts...'
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -68,14 +68,14 @@ const App: React.FC = () => {
 
       <div className='add-post-form'>
         <h2>Add Post</h2>
-        <input 
-          type="text" 
+        <input
+          type="text"
           placeholder='Title'
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
           className='add-post-input'
         />
-        <textarea 
+        <textarea
           placeholder='Post Text'
           value={newBody}
           onChange={(e) => setNewBody(e.target.value)}
@@ -86,15 +86,18 @@ const App: React.FC = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-      <div className='posts-wrapper'>
-        {filteredPosts.map(post => (
-          <div key={post.id} className='post-card'>
-            <h3>{post.title}</h3>
-            <p>{post.body}</p>
-            <button onClick={() => handleDeletePost(post.id)} className='delete-button'>Delete</button>
-          </div>
-        ))}
-      </div>
+        <div className='posts-wrapper'>
+          {filteredPosts.map(post => (
+            <div key={post.id} className='post-card'>
+              <h3>{post.title}</h3>
+              <p>{post.body}</p>
+              <button onClick={() => handleDeletePost(post.id)} className='delete-button'>Delete</button>
+            </div>
+          ))}
+          {visibleCount < posts.length && (
+            <button onClick={loadMorePosts} className="load-more-button">Load more</button>
+          )}
+        </div>
       )}
     </div>
   )
