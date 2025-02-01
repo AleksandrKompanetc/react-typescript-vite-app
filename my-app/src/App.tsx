@@ -55,6 +55,8 @@ const App: React.FC = () => {
     post.title.toLowerCase().includes(search.toLowerCase())
   )
 
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+
   return (
     <div className='container'>
       <h1>Posts</h1>
