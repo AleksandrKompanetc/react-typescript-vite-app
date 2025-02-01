@@ -56,6 +56,7 @@ const App: React.FC = () => {
   )
 
   const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+  const paginatedPosts = filteredPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
 
   return (
     <div className='container'>
