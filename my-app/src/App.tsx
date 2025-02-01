@@ -14,6 +14,7 @@ const App: React.FC = () => {
   const [newTitle, setNewTitle] = useState<string>('')
   const [newBody, setNewBody] = useState<string>('')
   const [currentPage, setCurrentPage] = useState<number>(1)
+  const postPerPage = 9
 
   const fetchPosts = () => {
     setLoading(true)
