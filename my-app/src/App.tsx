@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [search, setSearch] = useState<string>('')
   const [newTitle, setNewTitle] = useState<string>('')
   const [newBody, setNewBody] = useState<string>('')
+  const [visibleCount, setVisibleCount] = useState<number>(9)
 
   const fetchPosts = () => {
     setLoading(true)
