@@ -13,7 +13,7 @@ const App: React.FC = () => {
   const [search, setSearch] = useState<string>('')
   const [newTitle, setNewTitle] = useState<string>('')
   const [newBody, setNewBody] = useState<string>('')
-  const [visibleCount, setVisibleCount] = useState<number>(9)
+  const [currentPage, setCurrentPage] = useState<number>(1)
 
   const fetchPosts = () => {
     setLoading(true)
@@ -86,19 +86,20 @@ const App: React.FC = () => {
       {loading ? (
         <p>Loading...</p>
       ) : (
-        <div className='posts-wrapper'>
-          {filteredPosts.map(post => (
-            <div key={post.id} className='post-card'>
-              <h3>{post.title}</h3>
-              <p>{post.body}</p>
-              <button onClick={() => handleDeletePost(post.id)} className='delete-button'>Delete</button>
-            </div>
-          ))}
+        <>
+          <div className='posts-wrapper'>
+            {filteredPosts.map(post => (
+              <div key={post.id} className='post-card'>
+                <h3>{post.title}</h3>
+                <p>{post.body}</p>
+                <button onClick={() => handleDeletePost(post.id)} className='delete-button'>Delete</button>
+              </div>
+            ))}
+          </div>
           {visibleCount < posts.length && (
             <button onClick={loadMorePosts} className="load-more-button">Load more</button>
           )}
-        </div>
-      )}
+        </>
     </div>
   )
 }
