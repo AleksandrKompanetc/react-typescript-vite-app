@@ -24,7 +24,7 @@ const App: React.FC = () => {
   const [comments, setComments] = useState<Comment[]>(() => {
     return JSON.parse(localStorage.getItems('comments') || '[]')
   })
-  
+  const [newComment, setNewComment] = useState<{[key: number]: string}>({})
   const postsPerPage = 9;
 
   useEffect(() => {
