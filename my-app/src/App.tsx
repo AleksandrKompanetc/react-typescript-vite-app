@@ -127,6 +127,10 @@ const App: React.FC = () => {
                 <button onClick={() => handleDeletePost(post.id)} className='delete-button'>Delete</button>
                 <div className='comments-section'>
                   <h4>Comments</h4>
+                  {comments.filter(comment => comment.postId === post.id).map(comment => (
+                    <p key={comment.id} className='comment'>{comment.text}</p>
+                  ))}
+                  
                 </div>
               </div>
             ))}
