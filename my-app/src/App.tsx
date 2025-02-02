@@ -17,6 +17,16 @@ const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false)
   const postsPerPage = 9;
 
+  useEffect(() => {
+    const savedPosts = localStorage.getItem('posts')
+    if (savedPosts) {
+      setPosts(JSON.parse(savedPosts))
+      setLoading(false)
+    } else {
+      fetchPosts()
+    }
+  }, [])
+
   const fetchPosts = () => {
     setLoading(true)
     fetch('https://jsonplaceholder.typicode.com/posts')
