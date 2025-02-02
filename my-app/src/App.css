@@ -143,3 +143,13 @@ h1 {
 .pagination {
   margin: 20px auto;
 }
+
+.light-theme {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
