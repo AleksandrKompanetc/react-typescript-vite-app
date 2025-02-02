@@ -56,8 +56,8 @@ const App: React.FC = () => {
     post.title.toLowerCase().includes(search.toLowerCase())
   )
 
-  const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
-  const paginatedPosts = filteredPosts.slice((currentPage - 1) * postsPerPage, currentPage * postsPerPage);
+  const totalPages = Math.ceil(filteredPosts.length / postsPerPage)
+  
 
   return (
     <div className='container'>
