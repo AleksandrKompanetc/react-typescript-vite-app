@@ -114,6 +114,12 @@ const App: React.FC = () => {
               Next
             </button>
           </div>
+          <button
+            onClick={() => setCurrentPage(prev => prev + 1)}
+            className='load-more-button'
+          >
+            Load more posts
+          </button>
         </>
       )}
     </div>
