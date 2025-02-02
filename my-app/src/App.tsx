@@ -7,6 +7,12 @@ interface Post {
   body: string;
 }
 
+interface Comment {
+  id: number;
+  postId: number;
+  text: string;
+}
+
 const App: React.FC = () => {
   const [posts, setPosts] = useState<Post[]>([])
   const [loading, setLoading] = useState<boolean>(true)
