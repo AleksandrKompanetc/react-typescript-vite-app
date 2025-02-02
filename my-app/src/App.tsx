@@ -100,6 +100,20 @@ const App: React.FC = () => {
               </div>
             ))}
           </div>
+          <div className='pagination'>
+            <button
+              onClick={() => setCurrentPage(prev => Math.max(prev - 1, 1))}
+              disabled={currentPage === 1}
+            >
+              Back
+            </button>
+            <span>Page {currentPage} from {totalPages}</span>
+            <button
+              onClick={() => setCurrentPage(prev => Math.min(prev + 1, totalPages))}
+            >
+              Next
+            </button>
+          </div>
         </>
       )}
     </div>
