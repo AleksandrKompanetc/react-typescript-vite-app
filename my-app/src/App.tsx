@@ -115,6 +115,9 @@ const App: React.FC = () => {
                 <h3>{post.title}</h3>
                 <p>{post.body}</p>
                 <button onClick={() => handleDeletePost(post.id)} className='delete-button'>Delete</button>
+                <div className='comments-section'>
+                  <h4>Comments</h4>
+                </div>
               </div>
             ))}
           </div>
