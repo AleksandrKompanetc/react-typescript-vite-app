@@ -139,3 +139,7 @@ h1 {
   background-color: transparent;
   text-align: center;
 }
+
+.pagination {
+  margin: 20px auto;
+}
