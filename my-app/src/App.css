@@ -161,3 +161,15 @@ h1 {
   border: 1px solid #ccc;
   border-radius: 5px;
 }
+
+.light-theme .button, .light-theme .reload-button, .light-theme .add-button, 
+.light-theme .delete-button, .light-theme .theme-toggle, .light-theme .load-more-button {
+  background-color: #007bff;
+  color: white;
+}
+
+.dark-theme .button, .dark-theme .reload-button, .dark-theme .add-button, 
+.dark-theme .delete-button, .dark-theme .theme-toggle, .dark-theme .load-more-button {
+  background-color: #444;
+  color: white;
+}
