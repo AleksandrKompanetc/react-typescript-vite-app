@@ -21,6 +21,10 @@ const App: React.FC = () => {
   const [newBody, setNewBody] = useState<string>('')
   const [currentPage, setCurrentPage] = useState<number>(1)
   const [darkMode, setDarkMode] = useState<boolean>(false)
+  const [comments, setComments] = useState<Comment[]>(() => {
+    return JSON.parse(localStorage.getItems('comments') || '[]')
+  })
+  
   const postsPerPage = 9;
 
   useEffect(() => {
