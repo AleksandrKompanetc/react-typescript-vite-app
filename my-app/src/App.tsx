@@ -13,7 +13,8 @@ const App: React.FC = () => {
   const [search, setSearch] = useState<string>('')
   const [newTitle, setNewTitle] = useState<string>('')
   const [newBody, setNewBody] = useState<string>('')
-  const [currentPage, setCurrentPage] = useState<number>(1);
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [darkMode, setDarkMode] = useState<boolean>(false)
   const postsPerPage = 9;
 
   const fetchPosts = () => {
