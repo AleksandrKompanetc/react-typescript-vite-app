@@ -130,7 +130,13 @@ const App: React.FC = () => {
                   {comments.filter(comment => comment.postId === post.id).map(comment => (
                     <p key={comment.id} className='comment'>{comment.text}</p>
                   ))}
-                  
+                  <input 
+                    type="text"
+                    placeholder='Add comment...'
+                    value={newComment[post.id] || ''}
+                    onChange={(e) => setNewComment({...newComment, [post.id]: e.target.value})} 
+                    className='comment-input'
+                  />
                 </div>
               </div>
             ))}
