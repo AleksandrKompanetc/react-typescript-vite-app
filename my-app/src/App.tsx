@@ -13,8 +13,8 @@ const App: React.FC = () => {
   const [search, setSearch] = useState<string>('')
   const [newTitle, setNewTitle] = useState<string>('')
   const [newBody, setNewBody] = useState<string>('')
-  const [currentPage, setCurrentPage] = useState<number>(1)
-  const postPerPage = 9
+  const [currentPage, setCurrentPage] = useState<number>(1);
+  const postsPerPage = 9;
 
   const fetchPosts = () => {
     setLoading(true)
@@ -100,10 +100,8 @@ const App: React.FC = () => {
               </div>
             ))}
           </div>
-          {visibleCount < posts.length && (
-            <button onClick={loadMorePosts} className="load-more-button">Load more</button>
-          )}
         </>
+      )}
     </div>
   )
 }
