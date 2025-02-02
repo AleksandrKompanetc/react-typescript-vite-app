@@ -27,6 +27,10 @@ const App: React.FC = () => {
     }
   }, [])
 
+  useEffect(() => {
+    localStorage.setItem('posts', JSON.stringify(posts))
+  }, [posts])
+
   const fetchPosts = () => {
     setLoading(true)
     fetch('https://jsonplaceholder.typicode.com/posts')
