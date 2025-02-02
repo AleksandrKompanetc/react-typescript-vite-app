@@ -62,6 +62,9 @@ const App: React.FC = () => {
   return (
     <div className='container'>
       <h1>Posts</h1>
+      <button onClick={() => setDarkMode(!darkMode)} className='theme-toggle'>
+        {darkMode ? 'Light theme' : 'Dark theme'}
+      </button>
       <input
         type="text"
         placeholder='Searching posts...'
